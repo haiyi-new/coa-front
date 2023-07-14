@@ -1,10 +1,10 @@
 import React from 'react';
-import FileUpload from './FileUpload';
+import FileUpload from './Components/FileUpload';
 import Navbar from './Partials/Navbar';
 
 const App = () => {
   return (
-    <div className="container mt-4">
+    <div class="container-fluid d-flex flex-column h-100" align="left">
       <Navbar />
       <FileUpload />
     </div>

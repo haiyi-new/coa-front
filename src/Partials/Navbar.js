@@ -1,44 +1,69 @@
-import React from 'react';
+import React from "react";
+import logo from "../assets/images/logo.png";
+import wording from "../assets/images/wording.png";
 
 const Navbar = () => {
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light">
-      <div className="container">
-        <a className="navbar-brand" href="#">
-          <img src="/logo.png" alt="Logo" width="30" height="30" className="d-inline-block align-top" />
-          Your Logo
-        </a>
-        <button
-          className="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span className="navbar-toggler-icon"></span>
-        </button>
-        <div className="collapse navbar-collapse" id="navbarNav">
-          <ul className="navbar-nav ml-auto">
-            <li className="nav-item">
-              <a className="nav-link" href="#">
-                Home
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#">
-                About
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#">
-                Contact
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
+    <nav style={{ backgroundColor: "#fff" }}>
+      <table
+        style={{ height: "100%" }}
+        width="100%"
+        border="0"
+        cellspacing="0"
+        cellpadding="0"
+      >
+        <tbody>
+          <tr>
+            <td width="90" height="80px" align="left" valign="bottom">
+              <img
+                src={logo}
+                style={{  borderWidth: "0px" }}
+                alt="Logo"
+              />
+            </td>
+            <td height="80px" width="100%">
+              <img
+                className="ms-4"
+                src={wording}
+                style={{ width: "300px", borderWidth: "0px" }}
+                alt="Wording"
+              />
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <table width="100%">
+        <tbody>
+          <tr>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+      <table width="100%">
+        <tbody>
+          <tr>
+            <td>
+              <font
+                className="font_titleblack"
+                style={{
+                  display: "inline-block",
+                  width: "200px",
+                  color: "#224099",
+                }}
+              >
+                <b>Welcome</b>
+              </font>
+            </td>
+            <td style={{ width: "300px" }} align="right">
+              &nbsp;&nbsp;
+            </td>
+            <td align="right" valign="bottom"></td>
+            <td align="right" valign="bottom">
+              <a href="/" className="font_titleblack">Logout</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </nav>
   );
 };
