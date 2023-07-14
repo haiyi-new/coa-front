@@ -20,22 +20,22 @@ const FormPage = () => {
 
   // Define default values for missing or undefined fields
   const defaultValues = {
-    HsCode: '',
-    Type: '',
-    SenderCompany: '',
-    SenderAddress: '',
-    Consignee: '',
-    ConsigneeAddress: '',
-    Date: '',
-    PLNo: '',
-    Packages: '',
-    DescriptionGood: '',
-    Quantity: '',
-    NetWeight: '',
-    GrossWeight: '',
-    TotalQuantity: '',
-    TotalNetWeight: '',
-    TotalGrossWeight: '',
+    hsCode: '',
+    type: '',
+    senderCompany: '',
+    senderAddress: '',
+    consignee: '',
+    consigneeAddress: '',
+    date: '',
+    pLNo: '',
+    packages: '',
+    descriptionGood: '',
+    quantity: '',
+    netWeight: '',
+    grossWeight: '',
+    totalQuantity: '',
+    totalNetWeight: '',
+    totalGrossWeight: '',
     filePath: '', // Provide a default value for filePath
   };
 
@@ -48,27 +48,43 @@ const FormPage = () => {
       <form>
         <div className="form-field">
           <label htmlFor="hsCodeInput">HsCode:</label>
-          <input type="text" id="hsCodeInput" name="HsCode" value={mergedData.HsCode} readOnly />
+          <input type="text" id="hsCodeInput" name="hsCode" value={mergedData.hsCode} />
         </div>
 
+        {/* Add more form fields as needed */}
         <div className="form-field">
           <label htmlFor="typeInput">Type:</label>
-          <input type="text" id="typeInput" name="Type" value={mergedData.Type} readOnly />
+          <input type="text" id="typeInput" name="type" value={mergedData.type} />
         </div>
 
         <div className="form-field">
           <label htmlFor="senderCompanyInput">Sender Company:</label>
-          <input type="text" id="senderCompanyInput" name="SenderCompany" value={mergedData.SenderCompany} readOnly />
+          <input
+            type="text"
+            id="senderCompanyInput"
+            name="senderCompany"
+            value={mergedData.senderCompany}
+          />
         </div>
 
         <div className="form-field">
           <label htmlFor="senderAddressInput">Sender Address:</label>
-          <input type="text" id="senderAddressInput" name="SenderAddress" value={mergedData.SenderAddress} readOnly />
+          <input
+            type="text"
+            id="senderAddressInput"
+            name="senderAddress"
+            value={mergedData.senderAddress}
+          />
         </div>
 
         <div className="form-field">
           <label htmlFor="consigneeInput">Consignee:</label>
-          <input type="text" id="consigneeInput" name="Consignee" value={mergedData.Consignee} readOnly />
+          <input
+            type="text"
+            id="consigneeInput"
+            name="consignee"
+            value={mergedData.consignee}
+          />
         </div>
 
         <div className="form-field">
@@ -76,61 +92,74 @@ const FormPage = () => {
           <input
             type="text"
             id="consigneeAddressInput"
-            name="ConsigneeAddress"
-            value={mergedData.ConsigneeAddress}
-            readOnly
+            name="consigneeAddress"
+            value={mergedData.consigneeAddress}
           />
         </div>
 
         <div className="form-field">
           <label htmlFor="dateInput">Date:</label>
-          <input type="text" id="dateInput" name="Date" value={mergedData.Date} readOnly />
+          <input type="text" id="dateInput" name="date" value={mergedData.date} />
         </div>
 
         <div className="form-field">
-          <label htmlFor="plNoInput">PL No:</label>
-          <input type="text" id="plNoInput" name="PLNo" value={mergedData.PLNo} readOnly />
+          <label htmlFor="pLNoInput">PL No:</label>
+          <input type="text" id="pLNoInput" name="pLNo" value={mergedData.pLNo} />
         </div>
 
         <div className="form-field">
           <label htmlFor="packagesInput">Packages:</label>
-          <input type="text" id="packagesInput" name="Packages" value={mergedData.Packages} readOnly />
+          <input type="text" id="packagesInput" name="packages" value={mergedData.packages} />
         </div>
 
         <div className="form-field">
-          <label htmlFor="descriptionGoodInput">Description of Goods:</label>
+          <label htmlFor="descriptionGoodInput">Description Good:</label>
           <input
             type="text"
             id="descriptionGoodInput"
-            name="DescriptionGood"
-            value={mergedData.DescriptionGood}
-            readOnly
+            name="descriptionGood"
+            value={mergedData.descriptionGood}
           />
         </div>
 
         <div className="form-field">
           <label htmlFor="quantityInput">Quantity:</label>
-          <input type="text" id="quantityInput" name="Quantity" value={mergedData.Quantity} readOnly />
+          <input type="text" id="quantityInput" name="quantity" value={mergedData.quantity} />
         </div>
 
         <div className="form-field">
           <label htmlFor="netWeightInput">Net Weight:</label>
-          <input type="text" id="netWeightInput" name="NetWeight" value={mergedData.NetWeight} readOnly />
+          <input type="text" id="netWeightInput" name="netWeight" value={mergedData.netWeight} />
         </div>
 
         <div className="form-field">
           <label htmlFor="grossWeightInput">Gross Weight:</label>
-          <input type="text" id="grossWeightInput" name="GrossWeight" value={mergedData.GrossWeight} readOnly />
+          <input
+            type="text"
+            id="grossWeightInput"
+            name="grossWeight"
+            value={mergedData.grossWeight}
+          />
         </div>
 
         <div className="form-field">
           <label htmlFor="totalQuantityInput">Total Quantity:</label>
-          <input type="text" id="totalQuantityInput" name="TotalQuantity" value={mergedData.TotalQuantity} readOnly />
+          <input
+            type="text"
+            id="totalQuantityInput"
+            name="totalQuantity"
+            value={mergedData.totalQuantity}
+          />
         </div>
 
         <div className="form-field">
           <label htmlFor="totalNetWeightInput">Total Net Weight:</label>
-          <input type="text" id="totalNetWeightInput" name="TotalNetWeight" value={mergedData.TotalNetWeight} readOnly />
+          <input
+            type="text"
+            id="totalNetWeightInput"
+            name="totalNetWeight"
+            value={mergedData.totalNetWeight}
+          />
         </div>
 
         <div className="form-field">
@@ -138,14 +167,13 @@ const FormPage = () => {
           <input
             type="text"
             id="totalGrossWeightInput"
-            name="TotalGrossWeight"
-            value={mergedData.TotalGrossWeight}
-            readOnly
+            name="totalGrossWeight"
+            value={mergedData.totalGrossWeight}
           />
         </div>
 
         <div className="form-field">
-          <a href={mergedData.filePath} className="download-link" download>
+          <a href={mergedData.filePath || '#'} className="download-link" download>
             Download File
           </a>
         </div>

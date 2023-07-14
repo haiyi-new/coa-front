@@ -22,11 +22,11 @@ const FormListingPage = () => {
       <h1>Form Listing</h1>
       <ul className="form-list">
         {formList.map((form) => (
-          <li key={form.ID} className="form-item">
-            <Link to={`/form/${form.ID}`} className="form-link">
-              <div>ID: {form.ID}</div>
-              <div>HsCode: {form.HsCode}</div>
-              <div>Type: {form.Type}</div>
+          <li key={form.idt} className="form-item">
+            <Link to={`/form/${form.id}`} className="form-link">
+              <div>id: {form.id}</div>
+              <div>hscode: {form.hsCode}</div>
+              <div>type: {form.type}</div>
             </Link>
           </li>
         ))}
