@@ -4,10 +4,8 @@ import { useDropzone } from 'react-dropzone';
 
 const FileUpload = () => {
   const [selectedFiles, setSelectedFiles] = useState([]);
-  const [formData, setFormData] = useState({
-    hsCode: '',
-    typeOfApplication: '',
-  });
+  const [hsCode, setHsCode] = useState('');
+  const [type, setType] = useState('');
 
   const handleFileChange = (acceptedFiles) => {
     setSelectedFiles(acceptedFiles);
@@ -15,10 +13,11 @@ const FileUpload = () => {
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
-    setFormData((prevFormData) => ({
-      ...prevFormData,
-      [name]: value,
-    }));
+    if (name === 'hsCode') {
+      setHsCode(value);
+    } else if (name === 'type') {
+      setType(value);
+    }
   };
 
   const handleCancel = (fileName) => {
@@ -33,6 +32,8 @@ const FileUpload = () => {
     }
 
     const formData = new FormData();
+    formData.append('hsCode', hsCode);
+    formData.append('type', type);
     selectedFiles.forEach((file) => {
       formData.append('file', file);
     });
@@ -45,6 +46,11 @@ const FileUpload = () => {
       processData: false,
       success: () => {
         console.log('Files uploaded successfully!');
+        alert('Application submitted.'); // Show application submitted message
+        setSelectedFiles([]); // Clear selected files
+        setHsCode(''); // Clear HS Code input
+        setType(''); // Clear Type of Application input
+        window.location.reload(); // Refresh the page
         // Handle success behavior here
       },
       error: (error) => {
@@ -92,20 +98,20 @@ const FileUpload = () => {
               className="form-control ms-2"
               id="hsCodeInput"
               name="hsCode"
-              value={formData.hsCode}
+              value={hsCode}
               onChange={handleInputChange}
             />
           </div>
           <div className="d-flex mb-3">
             <label htmlFor="typeOfApplicationInput" className="form-label" style={{ width: '200px' }}>
-              Type of Application:
+              Description:
             </label>
             <input
               type="text"
               className="form-control ms-2"
               id="typeOfApplicationInput"
-              name="typeOfApplication"
-              value={formData.typeOfApplication}
+              name="type"
+              value={type}
               onChange={handleInputChange}
             />
           </div>
