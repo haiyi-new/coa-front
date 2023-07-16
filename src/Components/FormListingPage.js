@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import './FormListingPage.css'; // Import the CSS file for styling
+import './FormListingPage.css';
 
 const FormListingPage = () => {
   const [formList, setFormList] = useState([]);
@@ -18,19 +18,19 @@ const FormListingPage = () => {
   }
 
   return (
-    <div className="dashboard">
-      <h1>Form Listing</h1>
-      <ul className="form-list">
+    <div className="form-listing-page">
+      <h1>Document Submission Request</h1>
+      <div className="form-list">
         {formList.map((form) => (
-          <li key={form.idt} className="form-item">
+          <div key={form.idt} className="form-item">
             <Link to={`/form/${form.id}`} className="form-link">
               <div>id: {form.id}</div>
               <div>hscode: {form.hsCode}</div>
               <div>type: {form.type}</div>
             </Link>
-          </li>
+          </div>
         ))}
-      </ul>
+      </div>
     </div>
   );
 };
